@@ -6,7 +6,10 @@
 /*   By: mech-user <mech-user@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 14:11:46 by mech-user         #+#    #+#             */
-/*   Updated: 2025/05/27 14:11:47 by mech-user        ###   ########.fr       */
+/*   Updated: 2025/05/27 15:09:43 by mech-user        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "get_next_line.h"
+
+char	*ft_strjoin()
