@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yusaku <yusaku@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yutakumi <yutakumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/02 11:33:15 by yusaku            #+#    #+#             */
-/*   Updated: 2025/05/02 11:41:01 by yusaku           ###   ########.fr       */
+/*   Created: 2025/05/09 19:57:08 by yutakumi          #+#    #+#             */
+/*   Updated: 2025/05/09 20:18:12 by yutakumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
+	if (lst == NULL)
+		return (NULL);
 	while (lst->next != NULL)
 		lst = lst->next;
 	return (lst);

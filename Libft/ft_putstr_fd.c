@@ -3,10 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yusaku <yusaku@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yutakumi <yutakumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/07 11:12:35 by yusaku            #+#    #+#             */
-/*   Updated: 2025/04/07 11:12:36 by yusaku           ###   ########.fr       */
+/*   Created: 2025/04/28 22:33:32 by yutakumi          #+#    #+#             */
+/*   Updated: 2025/04/28 23:24:03 by yutakumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
+void	ft_putstr_fd(char *s, int fd)
+{
+	size_t	i;
+
+	if (!s)
+		return ;
+	i = 0;
+	while (s[i])
+	{
+		write (fd, &s[i], 1);
+		i++;
+	}
+}

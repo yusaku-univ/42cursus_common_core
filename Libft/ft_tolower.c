@@ -3,10 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yusaku <yusaku@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yutakumi <yutakumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/07 11:13:11 by yusaku            #+#    #+#             */
-/*   Updated: 2025/04/07 11:13:12 by yusaku           ###   ########.fr       */
+/*   Created: 2025/04/30 18:50:32 by yutakumi          #+#    #+#             */
+/*   Updated: 2025/04/30 19:33:26 by yutakumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
+int	ft_tolower(int c)
+{
+	if (c >= 'A' && c <= 'Z')
+		c += 'a' - 'A';
+	return (c);
+}

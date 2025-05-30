@@ -3,10 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yusaku <yusaku@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yutakumi <yutakumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/07 11:13:14 by yusaku            #+#    #+#             */
-/*   Updated: 2025/04/07 11:13:17 by yusaku           ###   ########.fr       */
+/*   Created: 2025/04/30 18:53:24 by yutakumi          #+#    #+#             */
+/*   Updated: 2025/04/30 19:34:25 by yutakumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
+int	ft_toupper(int c)
+{
+	if (c >= 'a' && c <= 'z')
+		c += 'A' - 'a';
+	return (c);
+}

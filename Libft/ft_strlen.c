@@ -3,10 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yusaku <yusaku@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yutakumi <yutakumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/07 11:12:52 by yusaku            #+#    #+#             */
-/*   Updated: 2025/04/07 11:12:53 by yusaku           ###   ########.fr       */
+/*   Created: 2025/04/28 23:37:38 by yutakumi          #+#    #+#             */
+/*   Updated: 2025/04/28 23:39:41 by yutakumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
+size_t	ft_strlen(const char *s)
+{
+	size_t	i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
+}

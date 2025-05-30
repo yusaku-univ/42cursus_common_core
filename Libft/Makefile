@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: yusaku <yusaku@student.42.fr>              +#+  +:+       +#+         #
+#    By: yutakumi <yutakumi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/04/07 09:53:05 by yusaku            #+#    #+#              #
-#    Updated: 2025/04/07 10:06:22 by yusaku           ###   ########.fr        #
+#    Created: 2025/04/24 19:57:13 by yutakumi          #+#    #+#              #
+#    Updated: 2025/04/30 19:14:40 by yutakumi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,6 +37,9 @@ $(NAME): $(OBJS)
 
 bonus: $(OBJS) $(BONUS_OBJS)
 	$(AR) $(NAME) $(OBJS) $(BONUS_OBJS)
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJS) $(BONUS_OBJS)

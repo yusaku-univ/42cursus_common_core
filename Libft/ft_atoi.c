@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yusaku <yusaku@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yutakumi <yutakumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/07 09:30:18 by yusaku            #+#    #+#             */
-/*   Updated: 2025/04/07 10:15:33 by yusaku           ###   ########.fr       */
+/*   Created: 2025/04/24 20:05:42 by yutakumi          #+#    #+#             */
+/*   Updated: 2025/05/12 20:53:21 by yutakumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
 int	ft_atoi(const char *str)
 {
-	int	i;
-	int	sign;
-	int	result;
+	size_t	i;
+	int		sign;
+	long	result;
 
 	i = 0;
 	sign = 1;
@@ -31,29 +31,27 @@ int	ft_atoi(const char *str)
 	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
+		if (result > ((LONG_MAX - (str[i] - '0')) / 10) && sign == 1)
+			return (-1);
+		if (result > ((LONG_MAX - (str[i] - '0')) / 10) && sign == -1)
+			return (0);
 		result = result * 10 + (str[i] - '0');
 		i++;
 	}
 	return (result * sign);
 }
 
-// #include<unistd.h>
-// #include<stdio.h>
+// #include <stdio.h>
 
 // int	main(int argc, char *argv[])
 // {
 // 	int	i;
 
-// 	if (argc < 2)
-// 	{
-// 		write (1, "\n", 1);
-// 		return (0);
-// 	}
 // 	i = 1;
-// 	while (argv[i])
+// 	while (i < argc)
 // 	{
-// 		printf ("%d\n", ft_atoi(argv[i]));
+// 		printf("%d\n", ft_atoi(argv[i]));
+// 		printf("%d\n", atoi(argv[i]));
 // 		i++;
 // 	}
-// 	return (0);
 // }
