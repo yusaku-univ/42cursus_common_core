@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yusaku <yusaku@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yutakumi <yutakumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/27 13:55:02 by mech-user         #+#    #+#             */
-/*   Updated: 2025/05/28 10:24:26 by yusaku           ###   ########.fr       */
+/*   Created: 2025/06/13 19:29:54 by yutakumi          #+#    #+#             */
+/*   Updated: 2025/06/13 19:29:57 by yutakumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-// join and free
 char	*ft_free(char *buffer, char *buf)
 {
 	char	*temp;
@@ -22,7 +21,6 @@ char	*ft_free(char *buffer, char *buf)
 	return (temp);
 }
 
-// delete line find
 char	*ft_next(char *buffer)
 {
 	int		i;
@@ -46,7 +44,6 @@ char	*ft_next(char *buffer)
 	return (line);
 }
 
-// take line for return
 char	*ft_line(char *buffer)
 {
 	char	*line;
@@ -77,6 +74,8 @@ char	*read_file(int fd, char *res)
 	if (!res)
 		res = ft_calloc(1, 1);
 	buffer = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
+	if (!buffer)
+		return (free(res), NULL);
 	byte_read = 1;
 	while (byte_read > 0)
 	{
@@ -84,6 +83,7 @@ char	*read_file(int fd, char *res)
 		if (byte_read == -1)
 		{
 			free(buffer);
+			free(res);
 			return (NULL);
 		}
 		buffer[byte_read] = 0;
@@ -97,8 +97,8 @@ char	*read_file(int fd, char *res)
 
 char	*get_next_line(int fd)
 {
-	static char *buffer;
-	char *line;
+	static char	*buffer;
+	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
 		return (NULL);

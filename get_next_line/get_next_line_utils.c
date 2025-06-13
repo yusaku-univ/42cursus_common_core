@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yusaku <yusaku@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yutakumi <yutakumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/27 14:11:46 by mech-user         #+#    #+#             */
-/*   Updated: 2025/05/28 10:23:54 by yusaku           ###   ########.fr       */
+/*   Created: 2025/06/13 19:30:08 by yutakumi          #+#    #+#             */
+/*   Updated: 2025/06/13 19:30:12 by yutakumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ char	*ft_strchr(const char *str, int c)
 	char	*string;
 	size_t	i;
 
-	string = (char *)string;
+	string = (char *)str;
 	i = 0;
 	while (string[i] != c && string[i])
 		i++;
@@ -69,11 +69,10 @@ void	ft_bzero(void *s, size_t size)
 	}
 }
 
-char	*ft_calloc(size_t count, size_t size)
+void	*ft_calloc(size_t count, size_t size)
 {
-	char	*ptr;
+	void	*ptr;
 	size_t	total;
-	size_t	i;
 
 	total = count * size;
 	if (count != 0 && total / count != size)
